@@ -1,16 +1,16 @@
-module Tests where
+module Main where
 
 import Piedras
-import Test.Tasty (defaultMain, testGroup)
-import Test.Tasty.HUnit (assertEqual, assertFailure, assertString ,testCase)
+import Test.Tasty (defaultMain, testGroup, TestTree)
+import Test.Tasty.HUnit (assertEqual, assertFailure, assertString, testCase)
 
 
-main = defaultMain unitTests
+main = defaultMain tests
 
-unitTests = testGroup "Unit tests" [testComenzarJuego0,testComenzarJuego1]
+tests = testGroup "Unit Tests" [test1, test2 , test2]
 
-testComenzarJuego0 =
-  testCase (assertEqual "for (comenzarJuego 0)" (error) (Piedras.comenzarJuego 0))
+test1 = testCase "test3" $ assertEqual "Cambio de Jugador" H $ (Piedras.otroJugador C)
+test2 = testCase "test3" $ assertEqual "Cambio de Jugador" C $ (Piedras.otroJugador H)
+test3 = testCase "test2" $ assertEqual "Juegos Ganadores de 10" [2,7,9] $ (Piedras.juegosGanadores 10)
 
-testComenzarJuego1 =
-  testCase (assertEqual "for (comenzarJuego 1)" (H,1)  (Piedras.comenzarJuego 1))
+  

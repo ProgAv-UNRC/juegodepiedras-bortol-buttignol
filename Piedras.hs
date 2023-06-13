@@ -71,13 +71,11 @@ mejorJug (j, k)
   | j == H =
     if (length jugadasH) > 0
       then maximum jugadasH
-      else error
-             ("No hay una mejor jugada posible para el estado " ++ (show (j, k)))
+      else 4
   | j == C =
     if (length jugadasC) > 0
       then minimum jugadasC
-      else error
-             ("No hay una mejor jugada posible para el estado " ++ (show (j, k)))
+      else 4
   | otherwise = error "jugada no valida"
   where
     jugadasH =
