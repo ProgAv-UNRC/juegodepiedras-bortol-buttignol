@@ -1,0 +1,36 @@
+cabal-version:      2.4
+name:               juegodepiedras-bortol-buttignol
+version:            0.1.0.0
+build-type:         Simple
+
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+author:             jpbn456
+maintainer:         jpbortol@gmail.com
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files:
+    CHANGELOG.md
+    README.md
+
+Library Piedras
+	exposed-modules: Piedras
+	build-depends: base >=4.12.0.0
+
+Test-Suite tests 
+	type: exitcode-stdio-1.0
+	main-is: Tests.hs
+	build-depends: base >=4.12.0.0, HUnit >=1.6, Piedras, tasty, tasty-hunit
+	hs-source-dirs: tests

@@ -84,5 +84,3 @@ comenzarJuego cant  | cant <= 0 = error "La cantidad de piedras debe ser mayor q
 -- por ejemplo, juegosGanadores 10 = [2,7,9]
 juegosGanadores :: Int -> [Int]
 juegosGanadores i = [x | x <- [1..i], evalEstado (H, x) == CGano]
-
-
