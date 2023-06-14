@@ -1,9 +1,0 @@
-Test suite tests: RUNNING...
-Unit Tests
-  test3: OK
-  test3: OK
-  test3: OK
-
-All 3 tests passed (0.00s)
-Test suite tests: PASS
-Test suite logged to: /home/valen/UNRC/univ/juegodepiedras-bortol-buttignol/dist-newstyle/build/x86_64-linux/ghc-8.8.4/juegodepiedras-bortol-buttignol-0.1.0.0/t/tests/test/juegodepiedras-bortol-buttignol-0.1.0.0-tests.log
