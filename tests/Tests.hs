@@ -7,7 +7,7 @@ import Test.Tasty.HUnit (assertEqual, assertFailure, assertString, testCase)
 
 main = defaultMain tests
 
-tests = testGroup "Unit Tests" [testOtroJugadorC,testOtroJugadoH,testGanadores10, testHacerJugada3H2,testHacerJugada5H7,testHacerJugada5C7,testEvalEstadoH9,testEvalEstadoC9,testMejorJugH12,testMejorJugH3,testMejorJugC12,testMejorJugC3]
+tests = testGroup "Unit Tests" [testOtroJugadorC,testOtroJugadoH,testGanadores10, testHacerJugada3H2,testHacerJugada5H7,testEvalEstadoC0,testEvalEstadoH0,testHacerJugada5C7,testEvalEstadoH9,testEvalEstadoC9,testMejorJugH12,testMejorJugH3,testMejorJugC12,testMejorJugC3]
 
 testOtroJugadorC = testCase "test1" $ assertEqual "Cambio de Jugador" H $ (Piedras.otroJugador C)
 testOtroJugadoH = testCase "test2" $ assertEqual "Cambio de Jugador" C $ (Piedras.otroJugador H)
