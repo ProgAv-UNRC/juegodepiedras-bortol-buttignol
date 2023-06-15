@@ -1,0 +1,29 @@
+Test suite tests: RUNNING...
+Unit Tests
+  Tests otroJugador
+    otroJugador C:       OK
+    otroJugador H:       OK
+  Tests hacerJugada
+    hacerJugada 2 (H,3): OK
+    hacerJugada 2 (H,7): OK
+    hacerJugada 5 (C,7): OK
+  Tests mejorJug
+    mejorJug (H,12):     OK
+    mejorJug (H,3):      OK
+    mejorJug (C,12):     OK
+    mejorJug (C,3):      FAIL
+      tests/Tests.hs:25:
+      mejorJug (C,3)
+      expected: 1
+       but got: 3
+      Use -p '/mejorJug (C,3)/' to rerun this test only.
+  Tests juegosGanadores
+    juegosGanadores 10:  OK
+    juegosGanadores 9:   OK
+    juegosGanadores 8:   OK
+    juegosGanadores 7:   OK
+    juegosGanadores 6:   OK
+
+1 out of 14 tests failed (0.00s)
+Test suite tests: FAIL
+Test suite logged to: /home/valen/UNRC/univ/juegodepiedras-bortol-buttignol/dist-newstyle/build/x86_64-linux/ghc-8.8.4/juegodepiedras-bortol-buttignol-0.1.0.0/t/tests/test/juegodepiedras-bortol-buttignol-0.1.0.0-tests.log
