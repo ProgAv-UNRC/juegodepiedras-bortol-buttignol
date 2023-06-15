@@ -50,8 +50,8 @@ evalEstado (j, k)   | (k == 0) = if j == C then CPerdio else CGano
 -- 	En el caso mejorJug (H, k) tenemos que devolver la jugada que nos da el valor minimo (es decir, consideramos 
 -- 	la mejor jugada para H, que seria la peor para C).
 mejorJug :: Estado -> Int
-mejorJug (j, k) | j == H = if (length jugadasH) > 0 then maximum jugadasH else error ("No hay una mejor jugada posible para el estado " ++ (show (j,k)))
-                | j == C = if (length jugadasC) > 0 then minimum jugadasC else error ("No hay una mejor jugada posible para el estado " ++ (show (j,k)))
+mejorJug (j, k) | j == H = if (length jugadasH) > 0 then maximum jugadasH else maximum posibleJugs
+                | j == C = if (length jugadasC) > 0 then maximum jugadasC else maximum posibleJugs
                 | otherwise = error "jugada no valida"
                 where 
                     jugadasH = [i | i <- posibleJugs, evalEstado (otroJugador j, k-i) == CPerdio]
@@ -63,17 +63,13 @@ mejorJug (j, k) | j == H = if (length jugadasH) > 0 then maximum jugadasH else e
 jugar :: Estado -> IO()
 jugar (j,k) = do
             putStrLn ("Hay "++ (show k) ++ " piedras, cuantas saca?:")
-            jugada <-  getLine
-            let s  = read jugada
+            jugada <- getLine
+            let s = read jugada
                 (j', k') = hacerJugada s (j,k)
-            if k'==0 then (putStrLn "Gano!")
-            else do
+            if k' == 0 then (putStrLn "Gano!") else do
                 let mj = mejorJug (j',k')
-                putStrLn ("mi jugada: "++(show mj))
-                if k' - mj == 0
-                then putStrLn "Perdio!"
-                else do
-                    jugar (H, k' - mj)
+                putStrLn ("mi jugada: " ++ (show mj))
+                if k' - mj == 0 then putStrLn "Perdio!" else do jugar (H, k' - mj)
 
 -- | Comienza el juego con una cantidad de piedras dada el Humano  
 comenzarJuego :: Int -> IO()
